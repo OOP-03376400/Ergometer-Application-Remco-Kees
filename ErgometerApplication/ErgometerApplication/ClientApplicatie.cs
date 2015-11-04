@@ -134,6 +134,11 @@ namespace ErgometerApplication
             logout("U bent uitgelogd.", Color.Blue);
         }
 
+        private void buttonStartTest_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void logout(string message, System.Drawing.Color cl)
         {
             panelLogin.BringToFront();

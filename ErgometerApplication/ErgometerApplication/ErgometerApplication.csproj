@@ -59,6 +59,13 @@
     <Compile Include="ChartPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Test.cs" />
+    <Compile Include="SelectTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectTest.Designer.cs">
+      <DependentUpon>SelectTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainClient.cs" />
     <Compile Include="PanelClientData.cs">
       <SubType>Component</SubType>
@@ -85,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ClientApplicatie.resx">
       <DependentUpon>ClientApplicatie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectTest.resx">
+      <DependentUpon>SelectTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

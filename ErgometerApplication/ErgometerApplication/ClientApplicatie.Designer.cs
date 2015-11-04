@@ -1,4 +1,5 @@
-﻿using System.IO.Ports;
+﻿using System;
+using System.IO.Ports;
 using System.Windows.Forms;
 
 namespace ErgometerApplication
@@ -40,6 +41,7 @@ namespace ErgometerApplication
             this.panelLogin = new ErgometerApplication.PanelLogin(this);
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.buttonLogOff = new System.Windows.Forms.Button();
+            this.buttonStartTest = new System.Windows.Forms.Button();
             this.labelUsername = new System.Windows.Forms.Label();
             this.labelHallo = new System.Windows.Forms.Label();
 
@@ -104,6 +106,7 @@ namespace ErgometerApplication
             // 
             this.panelTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelTopBar.Controls.Add(this.buttonLogOff);
+            this.panelTopBar.Controls.Add(this.buttonStartTest);
             this.panelTopBar.Controls.Add(this.labelUsername);
             this.panelTopBar.Controls.Add(this.labelHallo);
             this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -126,6 +129,18 @@ namespace ErgometerApplication
             this.buttonLogOff.Text = "Afmelden";
             this.buttonLogOff.UseVisualStyleBackColor = false;
             this.buttonLogOff.Click += new System.EventHandler(this.buttonLogOff_Click);
+
+            this.buttonStartTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStartTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonStartTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStartTest.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStartTest.Location = new System.Drawing.Point(647, 3);
+            this.buttonStartTest.Name = "buttonStartTest";
+            this.buttonStartTest.Size = new System.Drawing.Size(75, 23);
+            this.buttonStartTest.TabIndex = 1;
+            this.buttonStartTest.Text = "Kies Stress test";
+            this.buttonStartTest.UseVisualStyleBackColor = false;
+            this.buttonStartTest.Click += new System.EventHandler(this.buttonStartTest_Click);
             // 
             // labelUsername
             // 
@@ -169,6 +184,8 @@ namespace ErgometerApplication
 
         }
 
+    
+
         #endregion
         private System.Windows.Forms.Timer updateTimer;
         private System.Windows.Forms.Panel panelClientContainer;
@@ -181,6 +198,7 @@ namespace ErgometerApplication
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Label labelHallo;
         public PanelClientData heartBeat, RPM, speed, distance, power, energy, seconds, actualpower, time;
+        private Button buttonStartTest;
     }
 
     
