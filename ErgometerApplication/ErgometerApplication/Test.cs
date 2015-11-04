@@ -38,5 +38,9 @@ namespace ErgometerApplication
                 return -1;
             }
         }
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }
