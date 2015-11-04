@@ -52,7 +52,11 @@ namespace ErgometerApplication
         private void timer1_Tick(object sender, EventArgs e)
         {
             Test t =(Test)tests[listBox_Tests.SelectedIndex];
-            t.update(counter);
+            int power = t.update(counter);
+            if(power>-1)
+            {
+                Com.Write("PW " + power);
+            }
             counter++;
         }
     }
