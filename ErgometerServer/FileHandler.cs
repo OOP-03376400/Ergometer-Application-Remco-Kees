@@ -51,7 +51,7 @@ namespace ErgometerServer
         {
             Directory.CreateDirectory(GetSessionFolder(session));
 
-            using (File.Create(Path.Combine(GetSessionFile(session)))) ;
+            using (File.Create(Path.Combine(GetSessionFile(session))));
             using (File.Create(Path.Combine(GetSessionMetingen(session)))) ;
             using (File.Create(Path.Combine(GetSessionChat(session)))) ;
 
