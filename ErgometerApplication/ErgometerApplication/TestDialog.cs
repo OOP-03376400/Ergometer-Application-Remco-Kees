@@ -24,7 +24,7 @@ namespace ErgometerApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form olddataform = new OldData();
+            Form olddataform = new OldData(clientapp);
             olddataform.Show();
             this.Close();
         }

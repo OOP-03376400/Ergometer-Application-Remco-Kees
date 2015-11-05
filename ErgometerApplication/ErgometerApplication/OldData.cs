@@ -13,15 +13,37 @@ namespace ErgometerApplication
 {
     public partial class OldData : Form
     {
-        public OldData()
+        private ClientApplicatie clientapp;
+
+        public OldData(ClientApplicatie clientapp)
         {
             InitializeComponent();
             MainClient.SendNetCommand(new NetCommand(NetCommand.RequestType.ALLSESSIONS, MainClient.Session));
+            this.clientapp = clientapp;
+            timer1.Start();
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            foreach (Tuple<string,double,int> item in MainClient.oldSessionsData)
+            {
+                if (item.Item1 == MainClient.Name)
+                {
+                    listBox1.Items.Add(item.Item3);
+                }
+            }
         }
     }
 }
