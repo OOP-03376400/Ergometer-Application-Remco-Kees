@@ -37,13 +37,21 @@ namespace ErgometerApplication
         {
             listBox1.Items.Clear();
 
-            foreach (Tuple<string,double,int> item in MainClient.oldSessionsData)
+            if (MainClient.oldSessionsData != null)
             {
-                if (item.Item1 == MainClient.Name)
+                foreach (Tuple<string, double, int> item in MainClient.oldSessionsData)
                 {
-                    listBox1.Items.Add(item.Item3);
+                    if (item.Item1 == MainClient.Name)
+                    {
+                        listBox1.Items.Add(item.Item3);
+                    }
                 }
             }
+            else
+            {
+                listBox1.Items.Add("No old sessions available");
+            }
+            
         }
     }
 }
