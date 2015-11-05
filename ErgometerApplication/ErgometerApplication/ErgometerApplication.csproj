@@ -59,6 +59,18 @@
     <Compile Include="ChartPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OldData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldData.Designer.cs">
+      <DependentUpon>OldData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestDialog.Designer.cs">
+      <DependentUpon>TestDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test.cs" />
     <Compile Include="SelectTest.cs">
       <SubType>Form</SubType>
@@ -93,6 +105,9 @@
     <EmbeddedResource Include="ClientApplicatie.resx">
       <DependentUpon>ClientApplicatie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OldData.resx">
+      <DependentUpon>OldData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectTest.resx">
       <DependentUpon>SelectTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +121,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TestDialog.resx">
+      <DependentUpon>TestDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

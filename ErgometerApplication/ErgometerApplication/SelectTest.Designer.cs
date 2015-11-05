@@ -37,17 +37,20 @@
             // listBox_Tests
             // 
             this.listBox_Tests.FormattingEnabled = true;
-            this.listBox_Tests.Location = new System.Drawing.Point(157, 12);
+            this.listBox_Tests.ItemHeight = 16;
+            this.listBox_Tests.Location = new System.Drawing.Point(209, 15);
+            this.listBox_Tests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox_Tests.Name = "listBox_Tests";
-            this.listBox_Tests.Size = new System.Drawing.Size(302, 173);
+            this.listBox_Tests.Size = new System.Drawing.Size(401, 212);
             this.listBox_Tests.TabIndex = 0;
             this.listBox_Tests.SelectedIndexChanged += new System.EventHandler(this.listBox_Tests_SelectedIndexChanged);
             // 
             // button_Start
             // 
-            this.button_Start.Location = new System.Drawing.Point(7, 12);
+            this.button_Start.Location = new System.Drawing.Point(9, 15);
+            this.button_Start.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_Start.Name = "button_Start";
-            this.button_Start.Size = new System.Drawing.Size(144, 28);
+            this.button_Start.Size = new System.Drawing.Size(192, 34);
             this.button_Start.TabIndex = 1;
             this.button_Start.Text = "Start";
             this.button_Start.UseVisualStyleBackColor = true;
@@ -60,11 +63,12 @@
             // 
             // SelectTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 189);
+            this.ClientSize = new System.Drawing.Size(628, 233);
             this.Controls.Add(this.button_Start);
             this.Controls.Add(this.listBox_Tests);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SelectTest";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

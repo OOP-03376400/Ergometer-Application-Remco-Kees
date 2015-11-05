@@ -136,11 +136,11 @@ namespace ErgometerApplication
 
         private void buttonStartTest_Click(object sender, EventArgs e)
         {
-            Form temp = new SelectTest(MainClient.ComPort);
+            Form temp = new SelectTest(MainClient.ComPort, this);
             temp.Show();
         }
 
-        private void logout(string message, System.Drawing.Color cl)
+        public void logout(string message, System.Drawing.Color cl)
         {
             panelLogin.BringToFront();
             panelTopBar.Visible = false;

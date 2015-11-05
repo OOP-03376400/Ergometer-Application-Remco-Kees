@@ -8,8 +8,8 @@ namespace ErgometerApplication
 {
     class Test
     {
-        private int timeCounter;
-        private int[] powerStack;
+        public int timeCounter;
+        public int[] powerStack;
         private int powerCounter = 0;
         private string name;
 

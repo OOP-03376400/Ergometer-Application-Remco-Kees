@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +12,6 @@ namespace ErgometerApplication
 {
     class MainClient
     {
-
         public static ComPort ComPort { get; }
         public static TcpClient Doctor { get; set; }
         public static List<Meting> Metingen { get; }
@@ -19,11 +19,12 @@ namespace ErgometerApplication
 
         public static string Name;
 
-        public static int Session;
+        public static int Session, SessionsSent;
         public static bool Loggedin;
+        public static List<Tuple<string, double, int>> oldSessionsData; 
 
         private static Thread t;
-        private static bool running;
+        private static bool running, SessionsBeingSent;
 
         public static string HOST = "127.0.0.1";
         public static int PORT = 8888;
@@ -209,6 +210,22 @@ namespace ErgometerApplication
                     break;
                 case NetCommand.CommandType.ERROR:
                     Console.WriteLine("An error occured, ignoring");
+                    break;
+                case NetCommand.CommandType.SESSIONDATA:
+                    if (SessionsBeingSent)
+                    {
+                        oldSessionsData.Add(new Tuple<string, double, int>(command.DisplayName, command.Timestamp, command.Session));
+                        SessionsSent++;
+                        //if (SessionsSent >= SessionsLength)
+                        //    SessionsBeingSent = false;
+                    }
+                    break;
+                case NetCommand.CommandType.DATA:
+                    lock (Metingen)
+                    {
+                        Metingen.Add(command.Meting);
+                    }
+                    //window.Invoke(window.updateMetingen, new Object[] { command.Meting });
                     break;
                 default:
                     throw new FormatException("Error in Netcommand: Received command not recognized");

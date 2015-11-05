@@ -115,6 +115,32 @@ namespace ErgometerServer
                         FileHandler.WriteChat(session, chat);
                         client.Close();
                         break;
+                    case NetCommand.CommandType.REQUEST:
+                        switch (input.Request)
+                        {
+                            case NetCommand.RequestType.ALLSESSIONS:
+                                List<Tuple<int, string, double>> sessions = FileHandler.GetAllSessions();
+                                SendToClient(new NetCommand(NetCommand.LengthType.SESSIONS, sessions.Count,
+                                    input.Session));
+                                foreach (Tuple<int, string, double> session in sessions)
+                                {
+                                    SendToClient(new NetCommand(session.Item2, session.Item3, session.Item1));
+
+                                    Thread.Sleep(10);
+                                }
+                                break;
+                            case NetCommand.RequestType.OLDDATA:
+                                List<Meting> metingen = FileHandler.ReadMetingen(input.Session);
+                                foreach (Meting meting in metingen)
+                                {
+                                    Thread.Sleep(10);
+                                    SendToClient(new NetCommand(meting, input.Session));
+                                }
+                                break;
+                            default:
+                                throw new FormatException("Unknown command");
+                        }
+                        break;
                     default:
                         if(loggedin)
                             throw new FormatException("Unknown command");

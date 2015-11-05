@@ -16,8 +16,10 @@ namespace ErgometerApplication
     {
         private ComPort Com;
         private ArrayList tests = new ArrayList();
-        private int counter;
-        public SelectTest(ComPort com)
+        private int counter = 0;
+        private ClientApplicatie clientApplicatie;
+
+        public SelectTest(ComPort com, ClientApplicatie client)
         {
             Com = com;
             int[] t1 = { 50, 100, 150, 150, 100, 50 };
@@ -28,6 +30,7 @@ namespace ErgometerApplication
             InitializeComponent();
             listBox_Tests.DataSource = tests;
             timer1.Stop();
+            this.clientApplicatie = client;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,6 +61,12 @@ namespace ErgometerApplication
                 Com.Write("PW " + power);
             }
             counter++;
+            if (counter > t.powerStack.Length*t.timeCounter)
+            {
+                Form testdialog = new TestDialog(this, clientApplicatie);
+                testdialog.Show();
+                timer1.Stop();
+            }
         }
     }
 }
