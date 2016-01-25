@@ -92,17 +92,19 @@ namespace ErgometerDoctorApplication
                     error = "Het wachtwoord is onjuist.";
                     return false;
                 }
-
-                loggedin = true;
+                else
+                {
+                    loggedin = true;
+                }
             }
+            else
+            {
+                SendNetCommand(new NetCommand(NetCommand.RequestType.SESSIONDATA, Session));
+                Thread.Sleep(15);
+                SendNetCommand(new NetCommand(NetCommand.RequestType.USERS, Session));
 
-            
-            SendNetCommand(new NetCommand(NetCommand.RequestType.SESSIONDATA, Session));
-            Thread.Sleep(15);
-            SendNetCommand(new NetCommand(NetCommand.RequestType.USERS, Session));
-
-            Thread.Sleep(200);
-
+                Thread.Sleep(200);
+            }
             return true;
         }
 

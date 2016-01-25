@@ -77,7 +77,7 @@ namespace ErgometerApplication
                 if (password.Length > 0)
                 {
                     string error = "";
-                    bool connect = MainClient.Connect("COM3", username, password, out error);
+                    bool connect = MainClient.Connect("COM5", username, password, out error);
 
                     if (connect)
                     {

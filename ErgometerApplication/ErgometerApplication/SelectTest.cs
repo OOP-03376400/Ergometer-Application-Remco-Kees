@@ -23,10 +23,15 @@ namespace ErgometerApplication
         {
             Com = com;
             int[] t1 = { 50, 100, 150, 150, 100, 50 };
+            int[] t2 = { 100, 200, 300, 400,200,100,50};
             Test test1 = new Test(300,t1,"longTest");
             Test test2 = new Test(60, t1,"shortTest");
+            Test test3 = new Test(20, t1, "very Short Test");
+            Test test4 = new Test(10, t2, "powerTest");
             tests.Add(test1);
             tests.Add(test2);
+            tests.Add(test3);
+            tests.Add(test4);
             InitializeComponent();
             listBox_Tests.DataSource = tests;
             timer1.Stop();
@@ -64,7 +69,9 @@ namespace ErgometerApplication
             if (counter > t.powerStack.Length*t.timeCounter)
             {
                 Form testdialog = new TestDialog(this, clientApplicatie);
+                testdialog.BringToFront();
                 testdialog.Show();
+                testdialog.BringToFront();
                 timer1.Stop();
             }
         }
