@@ -138,7 +138,7 @@ namespace ErgometerServer
                                 }
                                 break;
                             default:
-                                throw new FormatException("Unknown command");
+                               throw new FormatException("Unknown command");
                         }
                         break;
                     default:

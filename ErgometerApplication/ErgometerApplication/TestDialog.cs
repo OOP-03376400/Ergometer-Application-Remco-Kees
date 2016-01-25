@@ -22,22 +22,22 @@ namespace ErgometerApplication
             this.clientapp = client;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form olddataform = new OldData(clientapp);
-            olddataform.Show();
-            this.Close();
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    Form olddataform = new OldData(clientapp);
+        //    olddataform.Show();
+        //    this.Close();
+        //}
 
         private void No_Click(object sender, EventArgs e)
         {
             this.Close();
-            clientapp.logout("U bent uitgelogd", Color.Blue);
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
+        private void Yes_Click(object sender, EventArgs e)
         {
             this.Close();
+            clientapp.logout("U bent uitgelogd", Color.Blue);
         }
     }
 }

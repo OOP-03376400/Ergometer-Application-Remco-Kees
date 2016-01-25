@@ -18,8 +18,7 @@ namespace ErgometerSimulator
             this.ergs = ergs;
         }
 
-        public Boolean 
-            string port)
+        public Boolean Connect(string port)
         {
             comPort = new SerialPort();
             comPort.PortName = port;
