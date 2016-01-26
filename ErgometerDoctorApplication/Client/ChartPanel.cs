@@ -74,9 +74,9 @@ namespace ErgometerDoctorApplication
                 case MetingType.RPM:
                     return meting.RPM;
                 case MetingType.SPEED:
-                    return (int)meting.Speed;
+                    return (int)(meting.Speed*100);
                 case MetingType.DISTANCE:
-                    return (int)meting.Distance;
+                    return (int)(meting.Distance*100);
                 case MetingType.POWER:
                     return meting.Power;
                 case MetingType.ENERGY:

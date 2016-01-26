@@ -123,8 +123,10 @@ namespace ErgometerApplication
                     error = "De inloggegevens zijn onjuist.";
                     return false;
                 }
-
-                Loggedin = true;
+                else
+                {
+                    Loggedin = true;
+                }
             }
 
             return true;

@@ -90,6 +90,7 @@ namespace ErgometerDoctorApplication
                 {
                     loggedin = false;
                     error = "Het wachtwoord is onjuist.";
+                    Disconnect();
                     return false;
                 }
                 else

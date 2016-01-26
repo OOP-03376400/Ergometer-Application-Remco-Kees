@@ -53,8 +53,8 @@ namespace ErgometerServer
             Directory.CreateDirectory(GetSessionFolder(session));
 
             using (File.Create(Path.Combine(GetSessionFile(session))));
-            using (File.Create(Path.Combine(GetSessionMetingen(session)))) ;
-            using (File.Create(Path.Combine(GetSessionChat(session)))) ;
+            using (File.Create(Path.Combine(GetSessionMetingen(session))));
+            using (File.Create(Path.Combine(GetSessionChat(session))));
 
             File.WriteAllText(GetSessionFile(session), naam + Environment.NewLine + Helper.Now);
             Console.WriteLine("Created session at " + Helper.MillisecondsToTime(Helper.Now));
@@ -66,7 +66,7 @@ namespace ErgometerServer
             {
                 Directory.Delete(GetSessionFolder(session), true);
             }
-            else
+            else if(metingen.Count > 0)
             {
                 string json = Newtonsoft.Json.JsonConvert.SerializeObject(metingen.ToArray());
                 File.WriteAllText(GetSessionMetingen(session), json);
