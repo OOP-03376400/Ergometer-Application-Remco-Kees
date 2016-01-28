@@ -138,7 +138,7 @@ namespace ErgometerApplication
             this.buttonStartTest.Name = "buttonStartTest";
             this.buttonStartTest.Size = new System.Drawing.Size(75, 23);
             this.buttonStartTest.TabIndex = 1;
-            this.buttonStartTest.Text = "Kies Stress test";
+            this.buttonStartTest.Text = "Kies Test";
             this.buttonStartTest.UseVisualStyleBackColor = false;
             this.buttonStartTest.Click += new System.EventHandler(this.buttonStartTest_Click);
             // 
